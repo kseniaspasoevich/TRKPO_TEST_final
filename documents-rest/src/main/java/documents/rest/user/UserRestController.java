@@ -1,5 +1,6 @@
 package documents.rest.user;
 
+import documents.dto.files.documents.DocumentTypeDto;
 import documents.dto.user.UserDto;
 import documents.jpa.entity.user.UserRolesEnum;
 import documents.service.service.AccessService;
@@ -21,8 +22,6 @@ public class UserRestController {
     UserService userService;
     @Autowired
     AccessService accessService;
-    @Autowired
-    PasswordEncoder passwordEncoder;
 
     @GetMapping(value = "")
     public List<UserDto> getAllUser() {
@@ -34,11 +33,15 @@ public class UserRestController {
         return userService.getUserById(id);
     }
 
+    @PostMapping(value = "")
+    public UserDto addNewUser(@RequestBody @Valid UserDto userDto){
+        return userService.addNewUser(userDto);
+    }
+
     @PostMapping(value = "/register",
             produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public UserDto register(@RequestBody @Valid UserDto userDto) {
-        userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
         return userService.addNewUser(userDto);
     }
 
