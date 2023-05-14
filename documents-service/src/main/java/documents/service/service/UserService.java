@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +25,9 @@ public class UserService implements UserDetailsService {
     @Autowired
     UserDao userDaoJpa;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         return userRepository.findUserByLogin(s).orElseThrow(IdNotFoundException::new);
@@ -33,6 +37,7 @@ public class UserService implements UserDetailsService {
         if (userDto.getPassword().length() < 6 || userDto.getPassword().length() > 20) {
             throw new ConstraintsException();
         }
+        userDto.setPassword(passwordEncoder.encode(userDto.getPassword()));
         return userDaoJpa.addNewUser(userDto);
     }
 
