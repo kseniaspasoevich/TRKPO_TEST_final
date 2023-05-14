@@ -2,6 +2,7 @@ package documents.service.service;
 
 import documents.dao.UserDao;
 import documents.dto.user.UserDto;
+import documents.jpa.exceprions.ConstraintsException;
 import documents.jpa.exceprions.IdNotFoundException;
 import documents.jpa.repository.UserRepository;
 import jdk.dynalink.linker.LinkerServices;
@@ -29,7 +30,9 @@ public class UserService implements UserDetailsService {
     }
 
     public UserDto addNewUser(UserDto userDto){
-
+        if (userDto.getPassword().length() < 6 || userDto.getPassword().length() > 20) {
+            throw new ConstraintsException();
+        }
         return userDaoJpa.addNewUser(userDto);
     }
 

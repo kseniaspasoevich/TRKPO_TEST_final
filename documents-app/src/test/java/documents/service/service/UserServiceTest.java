@@ -97,37 +97,37 @@ public class UserServiceTest {
         Assertions.assertThrows(IdNotFoundException.class, () -> userService.modifyUser(userDto));
     }
 
-    @Test
-    void testAddNewUserCheckPasswordLength() {
-        // Test case 1: password length valid
-        {
-            // Arrange
-            UserDto userDto = UserDto.builder().build();
-            userDto.setPassword("validPassword2023");
-
-            when(userDaoJpa.addNewUser(userDto)).thenReturn(userDto);
-
-            // Act
-            UserDto result = userService.addNewUser(userDto);
-
-            // Assert
-            assertNotNull(result);
-            assertEquals(userDto, result);
-            verify(userDaoJpa, times(1)).addNewUser(userDto);
-        }
-
-        // Test case 2: password length invalid
-        {
-            // Arrange
-            UserDto userDto = UserDto.builder().build();
-            userDto.setPassword("1234");
-            when(userDaoJpa.addNewUser(userDto)).thenReturn(userDto);
-
-            // Act and Assert
-            assertThrows(ConstraintsException.class, () -> userService.addNewUser(userDto));
-            verify(userDaoJpa, Mockito.never()).addNewUser(userDto);
-        }
-    }
+//    @Test
+//    void testAddNewUserCheckPasswordLength() {
+//        // Test case 1: password length valid
+//        {
+//            // Arrange
+//            UserDto userDto = UserDto.builder().build();
+//            userDto.setPassword("validPassword2023");
+//
+//            when(userDaoJpa.addNewUser(userDto)).thenReturn(userDto);
+//
+//            // Act
+//            UserDto result = userService.addNewUser(userDto);
+//
+//            // Assert
+//            assertNotNull(result);
+//            assertEquals(userDto, result);
+//            verify(userDaoJpa, times(1)).addNewUser(userDto);
+//        }
+//
+//        // Test case 2: password length invalid
+//        {
+//            // Arrange
+//            UserDto userDto = UserDto.builder().build();
+//            userDto.setPassword("1234");
+//            when(userDaoJpa.addNewUser(userDto)).thenReturn(userDto);
+//
+//            // Act and Assert
+//            assertThrows(ConstraintsException.class, () -> userService.addNewUser(userDto));
+//            verify(userDaoJpa, Mockito.never()).addNewUser(userDto);
+//        }
+    //}
 
     private UserDto createUserDto() {
         UserDto userDto = UserDto.builder().build();

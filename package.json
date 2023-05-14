@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "ra-data-simple-rest": "^4.9.3"
+  },
+  "devDependencies": {
+    "cypress": "^12.12.0"
   }
 }

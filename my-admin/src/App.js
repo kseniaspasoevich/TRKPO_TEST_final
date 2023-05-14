@@ -3,7 +3,7 @@ import {CatalogueRootList} from "./components/CatalogueRootList";
 import {BrowserRouter, Route} from "react-router-dom";
 
 import dataProvider from "./dataProvider";
-import simpleRestProvider from 'ra-data-simple-rest';
+//import simpleRestProvider from 'ra-data-simple-rest';
 import {DocumentTypeCreate, DocumentTypeEdit, DocumentTypeList} from "./components/DocumentTypeList";
 import authProvider from "./authProvider";
 import MyLoginPage from "./MyLoginPage";
