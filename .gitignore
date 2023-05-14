@@ -1,0 +1,8 @@
+# Project exclude paths
+/documents-app/target/
+/documents-dao/target/
+/documents-dto/target/
+/documents-jpa/target/
+/documents-rest/target/
+/documents-service/target/
+/node_modules/

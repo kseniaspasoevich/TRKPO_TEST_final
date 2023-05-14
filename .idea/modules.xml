@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TRKPO_TESTS.iml" filepath="$PROJECT_DIR$/TRKPO_TESTS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cms/documents-app/app.iml" filepath="$PROJECT_DIR$/cms/documents-app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cms/cms.iml" filepath="$PROJECT_DIR$/cms/cms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documents-app/documents-app.iml" filepath="$PROJECT_DIR$/documents-app/documents-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documents-dao/documents-dao.iml" filepath="$PROJECT_DIR$/documents-dao/documents-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documents-dto/documents-dto.iml" filepath="$PROJECT_DIR$/documents-dto/documents-dto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documents-jpa/documents-jpa.iml" filepath="$PROJECT_DIR$/documents-jpa/documents-jpa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documents-rest/documents-rest.iml" filepath="$PROJECT_DIR$/documents-rest/documents-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/documents-service/documents-service.iml" filepath="$PROJECT_DIR$/documents-service/documents-service.iml" />
+    </modules>
+  </component>
+</project>
