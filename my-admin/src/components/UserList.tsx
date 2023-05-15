@@ -36,10 +36,11 @@ export const UserCreate = (props: CreateProps) => (
         <SimpleForm>
             <TextInput source ="login" required/>
             <TextInput source ="password" required/>
-            <SelectInput source="role" choices={[
+            <SelectInput id='roles' source="role" choices={[
                 { id: 'ADMIN', name: 'ADMIN' },
                 { id: 'USER', name: 'USER' },
-            ]} />
+            ]} defaultValue="ADMIN" // Set the default value to "ADMIN"
+            />
         </SimpleForm>
     </Create>
 )
