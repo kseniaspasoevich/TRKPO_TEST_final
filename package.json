@@ -1,8 +1,8 @@
 {
   "dependencies": {
+    "cypress": "^12.12.0",
+    "cypress-downloadfile": "^1.2.3",
     "ra-data-simple-rest": "^4.9.3"
   },
-  "devDependencies": {
-    "cypress": "^12.12.0"
-  }
+  "devDependencies": {}
 }

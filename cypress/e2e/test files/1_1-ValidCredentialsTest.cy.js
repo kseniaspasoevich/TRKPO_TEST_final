@@ -9,6 +9,5 @@ describe('Login Test', () => {
     cy.get('button[type="submit"]').click();
 
     cy.url().should('eq', 'http://localhost:3000/catalogue/root');
-    //cy.contains('Welcome, your-username!').should('be.visible'); // Replace with a unique text element on the dashboard page
   });
 });

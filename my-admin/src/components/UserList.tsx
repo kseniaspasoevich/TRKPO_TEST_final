@@ -39,7 +39,7 @@ export const UserCreate = (props: CreateProps) => (
             <SelectInput id='roles' source="role" choices={[
                 { id: 'ADMIN', name: 'ADMIN' },
                 { id: 'USER', name: 'USER' },
-            ]} defaultValue="ADMIN" // Set the default value to "ADMIN"
+            ]}
             />
         </SimpleForm>
     </Create>

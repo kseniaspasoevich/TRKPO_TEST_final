@@ -17,9 +17,6 @@ describe("Document Type", () => {
 
     // Save the changes
     cy.contains("Save").click();
-    // Delay before verifying the updated name
-    //cy.wait(5000); // Adjust the delay time as needed
-
 
     // Verify that the document type is updated
     cy.contains("NEW-TYPE").should("exist");
